@@ -25,7 +25,7 @@ public class Contact {
 							+ "\n4.Edit residing city of existing contact"
 							+ "\n5.Edit residing state of existing contact"
 							+ "\n6.Edit zip/pin code of existing contact" + "\n7.Edit phone number of existing contact"
-							+ "\n8.Edit email-ID of existing contact"
+							+ "\n8.Edit email-ID of existing contact" + "\n9.Delete existing contact"
 							+ "\nPress any other integer to exit address book");
 					choice = input.nextInt();
 					if (choice >= 0)
@@ -69,7 +69,9 @@ public class Contact {
 				editEmailID();
 				break;
 			}
-			default:{
+			case 9:
+				deleteContact();
+			default: {
 				System.out.println("Closing Address Book. ");
 				return;
 			}
@@ -179,6 +181,14 @@ public class Contact {
 			System.out.println("Enter new email-ID:");
 			this.emailID = input.next();
 			printContacts();
+		}
+	}
+
+	// 9. DELETE EXISTING CONTACT DETAILS
+	public void deleteContact() {
+		if (getContactName()) {
+			System.out.println("Deleting contact.");
+			return;
 		}
 	}
 
